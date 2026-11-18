@@ -1,0 +1,46 @@
+
+<header class="navbar">
+  <div class="nav-container">
+
+<a href="#accueil" class="logo">
+  <span class="logo-name">Ruth<span class="dot">✦</span></span>
+  <span class="logo-subtitle">DIGITAL STUDIO</span>
+</a>
+
+    <nav class="nav-links">
+      <a href="#accueil">{{ translation.t('nav.home') }}</a>
+      <a href="#services">{{ translation.t('nav.services') }}</a>
+      <a href="#projets">{{ translation.t('nav.projects') }}</a>
+      <a href="#about">{{ translation.t('nav.about') }}</a>
+    </nav>
+
+    <div class="nav-actions">
+
+      <div class="language-selector">
+        <button
+          [class.active]="translation.currentLang() === 'fr'"
+          (click)="changeLanguage('fr')">
+          FR
+        </button>
+
+        <button
+          [class.active]="translation.currentLang() === 'es'"
+          (click)="changeLanguage('es')">
+          ES
+        </button>
+
+        <button
+          [class.active]="translation.currentLang() === 'en'"
+          (click)="changeLanguage('en')">
+          EN
+        </button>
+      </div>
+
+      <a href="#contact" class="nav-contact">
+        {{ translation.t('nav.contact') }} <span>↗</span>
+      </a>
+
+    </div>
+
+  </div>
+</header>
