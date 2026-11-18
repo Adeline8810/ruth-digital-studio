@@ -12,8 +12,10 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class Contact {
 
   enviarCorreo(form: NgForm): void {
+
     if (form.invalid) {
       form.control.markAllAsTouched();
+      alert('Veuillez remplir tous les champs obligatoires.');
       return;
     }
 
@@ -30,10 +32,11 @@ export class Contact {
       `Message :\n${datos.Message}`;
 
     const url =
-      `mailto:${destinatario}` +
-      `?subject=${encodeURIComponent(asunto)}` +
+      'https://mail.google.com/mail/?view=cm&fs=1' +
+      `&to=${encodeURIComponent(destinatario)}` +
+      `&su=${encodeURIComponent(asunto)}` +
       `&body=${encodeURIComponent(mensaje)}`;
 
-    window.location.href = url;
+    window.open(url, '_blank');
   }
 }
