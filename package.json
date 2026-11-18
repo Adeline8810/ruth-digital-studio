@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "publish": "ng build && git add . && git commit -m \"Actualizacion de Ruth Digital Studio\" && git push",
     "test": "ng test",
     "serve:ssr:ruth-digital-studio": "node dist/ruth-digital-studio/server/server.mjs"
   },
