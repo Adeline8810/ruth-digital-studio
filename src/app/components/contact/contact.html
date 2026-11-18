@@ -31,18 +31,31 @@
       <h3>Parlons de votre projet</h3>
       <p>Écrivez-moi, je vous répondrai avec plaisir.</p>
 
-      <form action="mailto:adeline02025@gmail.com"
-            method="post"
-            enctype="text/plain">
+      <form #contactForm="ngForm"
+            (ngSubmit)="enviarCorreo(contactForm)">
 
-        <label>Votre nom</label>
-        <input type="text" name="Nom" placeholder="Nom et prénom" required />
+        <label for="nom">Votre nom</label>
+        <input
+          id="nom"
+          type="text"
+          name="Nom"
+          ngModel
+          placeholder="Nom et prénom"
+          required
+        />
 
-        <label>Votre e-mail</label>
-        <input type="email" name="Email" placeholder="Adresse e-mail" required />
+        <label for="email">Votre e-mail</label>
+        <input
+          id="email"
+          type="email"
+          name="Email"
+          ngModel
+          placeholder="Adresse e-mail"
+          required
+        />
 
-        <label>Votre projet</label>
-        <select name="Projet">
+        <label for="projet">Votre projet</label>
+        <select id="projet" name="Projet" ngModel required>
           <option value="">Choisissez un service</option>
           <option>Création de site web</option>
           <option>Design digital</option>
@@ -50,11 +63,20 @@
           <option>Autre projet</option>
         </select>
 
-        <label>Votre message</label>
-        <textarea name="Message" rows="4"
-                  placeholder="Parlez-moi de votre projet..." required></textarea>
+        <label for="message">Votre message</label>
+        <textarea
+          id="message"
+          name="Message"
+          ngModel
+          rows="4"
+          placeholder="Parlez-moi de votre projet..."
+          required
+        ></textarea>
 
-        <button type="submit" class="btn-primary">
+        <button
+          type="submit"
+          class="btn-primary"
+          [disabled]="contactForm.invalid">
           Envoyer mon message ↗
         </button>
 
@@ -63,4 +85,3 @@
 
   </div>
 </section>
-
